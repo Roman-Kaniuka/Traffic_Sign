@@ -1,0 +1,60 @@
+D:\Р\c#\class 09.07\My_First_Project\My_First_Project\bin\Debug\net6.0\My_First_Project.exe
+D:\Р\c#\class 09.07\My_First_Project\My_First_Project\bin\Debug\net6.0\My_First_Project.deps.json
+D:\Р\c#\class 09.07\My_First_Project\My_First_Project\bin\Debug\net6.0\My_First_Project.runtimeconfig.json
+D:\Р\c#\class 09.07\My_First_Project\My_First_Project\bin\Debug\net6.0\My_First_Project.dll
+D:\Р\c#\class 09.07\My_First_Project\My_First_Project\bin\Debug\net6.0\My_First_Project.pdb
+D:\Р\c#\class 09.07\My_First_Project\My_First_Project\obj\Debug\net6.0\My_First_Project.csproj.AssemblyReference.cache
+D:\Р\c#\class 09.07\My_First_Project\My_First_Project\obj\Debug\net6.0\My_First_Project.GeneratedMSBuildEditorConfig.editorconfig
+D:\Р\c#\class 09.07\My_First_Project\My_First_Project\obj\Debug\net6.0\My_First_Project.AssemblyInfoInputs.cache
+D:\Р\c#\class 09.07\My_First_Project\My_First_Project\obj\Debug\net6.0\My_First_Project.AssemblyInfo.cs
+D:\Р\c#\class 09.07\My_First_Project\My_First_Project\obj\Debug\net6.0\My_First_Project.csproj.CoreCompileInputs.cache
+D:\Р\c#\class 09.07\My_First_Project\My_First_Project\obj\Debug\net6.0\My_First_Project.dll
+D:\Р\c#\class 09.07\My_First_Project\My_First_Project\obj\Debug\net6.0\refint\My_First_Project.dll
+D:\Р\c#\class 09.07\My_First_Project\My_First_Project\obj\Debug\net6.0\My_First_Project.pdb
+D:\Р\c#\class 09.07\My_First_Project\My_First_Project\obj\Debug\net6.0\My_First_Project.genruntimeconfig.cache
+D:\Р\c#\class 09.07\My_First_Project\My_First_Project\obj\Debug\net6.0\ref\My_First_Project.dll
+D:\myProjeck\My_First_Project\My_First_Project\bin\Debug\net6.0\My_First_Project.exe
+D:\myProjeck\My_First_Project\My_First_Project\bin\Debug\net6.0\My_First_Project.deps.json
+D:\myProjeck\My_First_Project\My_First_Project\bin\Debug\net6.0\My_First_Project.runtimeconfig.json
+D:\myProjeck\My_First_Project\My_First_Project\bin\Debug\net6.0\My_First_Project.dll
+D:\myProjeck\My_First_Project\My_First_Project\bin\Debug\net6.0\My_First_Project.pdb
+D:\myProjeck\My_First_Project\My_First_Project\obj\Debug\net6.0\My_First_Project.csproj.AssemblyReference.cache
+D:\myProjeck\My_First_Project\My_First_Project\obj\Debug\net6.0\My_First_Project.GeneratedMSBuildEditorConfig.editorconfig
+D:\myProjeck\My_First_Project\My_First_Project\obj\Debug\net6.0\My_First_Project.AssemblyInfoInputs.cache
+D:\myProjeck\My_First_Project\My_First_Project\obj\Debug\net6.0\My_First_Project.AssemblyInfo.cs
+D:\myProjeck\My_First_Project\My_First_Project\obj\Debug\net6.0\My_First_Project.csproj.CoreCompileInputs.cache
+D:\myProjeck\My_First_Project\My_First_Project\obj\Debug\net6.0\My_First_Project.dll
+D:\myProjeck\My_First_Project\My_First_Project\obj\Debug\net6.0\refint\My_First_Project.dll
+D:\myProjeck\My_First_Project\My_First_Project\obj\Debug\net6.0\My_First_Project.pdb
+D:\myProjeck\My_First_Project\My_First_Project\obj\Debug\net6.0\My_First_Project.genruntimeconfig.cache
+D:\myProjeck\My_First_Project\My_First_Project\obj\Debug\net6.0\ref\My_First_Project.dll
+D:\myProjeck\My_First_Project 23.01.2023\My_First_Project\bin\Debug\net6.0\My_First_Project.exe
+D:\myProjeck\My_First_Project 23.01.2023\My_First_Project\bin\Debug\net6.0\My_First_Project.deps.json
+D:\myProjeck\My_First_Project 23.01.2023\My_First_Project\bin\Debug\net6.0\My_First_Project.runtimeconfig.json
+D:\myProjeck\My_First_Project 23.01.2023\My_First_Project\bin\Debug\net6.0\My_First_Project.dll
+D:\myProjeck\My_First_Project 23.01.2023\My_First_Project\bin\Debug\net6.0\My_First_Project.pdb
+D:\myProjeck\My_First_Project 23.01.2023\My_First_Project\obj\Debug\net6.0\My_First_Project.csproj.AssemblyReference.cache
+D:\myProjeck\My_First_Project 23.01.2023\My_First_Project\obj\Debug\net6.0\My_First_Project.GeneratedMSBuildEditorConfig.editorconfig
+D:\myProjeck\My_First_Project 23.01.2023\My_First_Project\obj\Debug\net6.0\My_First_Project.AssemblyInfoInputs.cache
+D:\myProjeck\My_First_Project 23.01.2023\My_First_Project\obj\Debug\net6.0\My_First_Project.AssemblyInfo.cs
+D:\myProjeck\My_First_Project 23.01.2023\My_First_Project\obj\Debug\net6.0\My_First_Project.csproj.CoreCompileInputs.cache
+D:\myProjeck\My_First_Project 23.01.2023\My_First_Project\obj\Debug\net6.0\My_First_Project.dll
+D:\myProjeck\My_First_Project 23.01.2023\My_First_Project\obj\Debug\net6.0\refint\My_First_Project.dll
+D:\myProjeck\My_First_Project 23.01.2023\My_First_Project\obj\Debug\net6.0\My_First_Project.pdb
+D:\myProjeck\My_First_Project 23.01.2023\My_First_Project\obj\Debug\net6.0\My_First_Project.genruntimeconfig.cache
+D:\myProjeck\My_First_Project 23.01.2023\My_First_Project\obj\Debug\net6.0\ref\My_First_Project.dll
+D:\Р\c#\myProjeck\Traffic Sign\My_First_Project\bin\Debug\net6.0\My_First_Project.exe
+D:\Р\c#\myProjeck\Traffic Sign\My_First_Project\bin\Debug\net6.0\My_First_Project.deps.json
+D:\Р\c#\myProjeck\Traffic Sign\My_First_Project\bin\Debug\net6.0\My_First_Project.runtimeconfig.json
+D:\Р\c#\myProjeck\Traffic Sign\My_First_Project\bin\Debug\net6.0\My_First_Project.dll
+D:\Р\c#\myProjeck\Traffic Sign\My_First_Project\bin\Debug\net6.0\My_First_Project.pdb
+D:\Р\c#\myProjeck\Traffic Sign\My_First_Project\obj\Debug\net6.0\My_First_Project.csproj.AssemblyReference.cache
+D:\Р\c#\myProjeck\Traffic Sign\My_First_Project\obj\Debug\net6.0\My_First_Project.GeneratedMSBuildEditorConfig.editorconfig
+D:\Р\c#\myProjeck\Traffic Sign\My_First_Project\obj\Debug\net6.0\My_First_Project.AssemblyInfoInputs.cache
+D:\Р\c#\myProjeck\Traffic Sign\My_First_Project\obj\Debug\net6.0\My_First_Project.AssemblyInfo.cs
+D:\Р\c#\myProjeck\Traffic Sign\My_First_Project\obj\Debug\net6.0\My_First_Project.csproj.CoreCompileInputs.cache
+D:\Р\c#\myProjeck\Traffic Sign\My_First_Project\obj\Debug\net6.0\My_First_Project.dll
+D:\Р\c#\myProjeck\Traffic Sign\My_First_Project\obj\Debug\net6.0\refint\My_First_Project.dll
+D:\Р\c#\myProjeck\Traffic Sign\My_First_Project\obj\Debug\net6.0\My_First_Project.pdb
+D:\Р\c#\myProjeck\Traffic Sign\My_First_Project\obj\Debug\net6.0\My_First_Project.genruntimeconfig.cache
+D:\Р\c#\myProjeck\Traffic Sign\My_First_Project\obj\Debug\net6.0\ref\My_First_Project.dll

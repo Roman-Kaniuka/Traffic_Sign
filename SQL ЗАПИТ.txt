@@ -1,0 +1,86 @@
+------------------------------------------------------------------------------------------------------------|
+CREATE TABLE traffic_sign.size 
+(
+Id INT PRIMARY KEY AUTO_INCREMENT,
+name_size CHAR(10)
+);
+|--------------------|
+INSERT INTO traffic_sign.size (name_size)
+VALUE ('I'),
+('II'),
+('III'),
+('IV'),
+('ДЗIП');
+|--------------------|
+SELECT * FROM traffic_sign.size;
+------------------------------------------------------------------------------------------------------------|
+CREATE TABLE traffic_sign.figure 
+(
+Id INT PRIMARY KEY AUTO_INCREMENT,
+name_figure CHAR(15)
+);
+|--------------------|
+INSERT INTO  traffic_sign.figure  (name_figure)
+VALUE ('Triangle'),
+('Octagon'),
+('Circle'),
+('Square'),
+('Rectangle'),
+('Diamond');
+|--------------------|
+SELECT * FROM traffic_sign.figure;
+------------------------------------------------------------------------------------------------------------|
+CREATE TABLE traffic_sign.shield (
+    Id INT PRIMARY KEY AUTO_INCREMENT, 
+    name_shield VARCHAR(10), 
+    size_id INT NOT NULL, 
+    figure_id INT NOT NULL, 
+    height INT NOT NULL, 
+    width INT NOT NULL,   
+    FOREIGN KEY (size_id)  REFERENCES traffic_sign.size (Id), 
+    FOREIGN KEY (figure_id)  REFERENCES traffic_sign.figure (Id) 
+);
+|--------------------|
+INSERT INTO  traffic_sign.shield (name_shield, size_id, figure_id, height, width)
+VALUE 
+('1.1', 	1,	1,	700,	700),
+('1.1',  	2,	1,	900,	700),
+('1.1',  	3,	1,	1200,	700),
+('1.2', 	1,	1,	700,	700),
+('1.2', 	2,	1,	900,	700),
+('1.2', 	3,	1,	1200,	700),
+('1.4.1', 	1,	5,	500,	2250),
+('1.4.1', 	2,	5,	500,	2250),
+('1.4.1', 	3,	5,	700,	3150),
+('1.4.2', 	1,	5,	500,	2250),
+('1.4.2', 	2,	5,	500,	2250),
+('1.4.2', 	3,	5,	700,	3150),
+('2.2', 	1,	2,	700,	700),
+('2.2', 	2,	2,	900,	900),
+('2.2', 	3,	2,	1200,	1200),
+('2.3', 	1,	6,	600,	600),
+('2.3',	        2,	6,	700,	700),
+('2.3', 	3,	6,	900,	900),
+('2.4', 	1,	6,	600,	600),
+('2.4', 	2,	6,	700,	700),
+('2.4', 	3,	6,	900,	900),
+('2.5', 	1,	3,	600,	600),
+('2.5', 	2,	3,	700,	700),
+('2.5', 	3,	3,	900,	900),
+('2.5', 	4,	3,	1200,	1200),
+('2.6', 	1,	4,	600,	600),
+('2.6', 	2,	4,	700,	700),
+('2.6', 	3,	4,	900,	900);
+|--------------------|
+SELECT Id, name_shield, size_id, figure_id, height, width FROM traffic_sign.shield;
+
+------------------------------------------------------------------------------------------------------------|
+
+////////////////////
+////////////////////
+SELECT sh.Id, name_shield, name_size, name_figure, height, width 
+FROM traffic_sign.size AS si INNER JOIN traffic_sign.shield AS sh ON si.Id = sh.size_id
+INNER JOIN traffic_sign.figure AS f ON sh.figure_id = f.Id
+ORDER BY sh.Id;
+////////////////////
+////////////////////

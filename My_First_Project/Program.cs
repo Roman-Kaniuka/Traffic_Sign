@@ -11,10 +11,10 @@
 
             RoadSign roadSign = new RoadSign();
             roadSign.GetWindyArea();
-            roadSign.Print();
+            //roadSign.Print();
 
-            //RoadShield roadShield = new RoadShieldSquare(NamesOfSignsOctagon.s2_2, StandardSize.I, GroupsOfSigns.попереджувальні, true);
-            //roadShield.Print(); 
+            RoadShield roadShield = new RoadShieldSquare(NamesOfSignsOctagon.s2_2, StandardSize.I, GroupsOfSigns.попереджувальні, true);
+            roadShield.Print(); 
 
         }
     }

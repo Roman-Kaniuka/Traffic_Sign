@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Р\\c#\\myProjeck\\Traffic Sign\\My_First_Project\\My_First_Project.csproj",
+      "projectUniqueName": "D:\\Р\\c#\\myProjeck\\Traffic_Sign\\My_First_Project\\My_First_Project.csproj",
       "projectName": "My_First_Project",
-      "projectPath": "D:\\Р\\c#\\myProjeck\\Traffic Sign\\My_First_Project\\My_First_Project.csproj",
+      "projectPath": "D:\\Р\\c#\\myProjeck\\Traffic_Sign\\My_First_Project\\My_First_Project.csproj",
       "packagesPath": "C:\\Users\\kaniu\\.nuget\\packages\\",
-      "outputPath": "D:\\Р\\c#\\myProjeck\\Traffic Sign\\My_First_Project\\obj\\",
+      "outputPath": "D:\\Р\\c#\\myProjeck\\Traffic_Sign\\My_First_Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kaniu\\AppData\\Roaming\\NuGet\\NuGet.Config",

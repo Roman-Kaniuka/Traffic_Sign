@@ -72,7 +72,7 @@ namespace My_First_Project
         protected List<Shield> GetTheConnectionString (object name, StandardSize size)
         {
             
-            return GetShieldParameter(@"D:\myProjeck\Traffic_Sign\Test.txt", name, size);
+            return GetShieldParameter(@"D:\Р\c#\myProjeck\Traffic_Sign\Test.txt", name, size);
         }
         protected double GetWeight(double shieldAreaFormula)
         {

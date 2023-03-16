@@ -9,7 +9,7 @@ namespace My_First_Project
     enum NamesOfSignsOctagon : byte
     {        
         s2_2,
-           }
+    }
     internal class RoadShieldOctagon : RoadShield
     {
         public RoadShieldOctagon(object name, StandardSize size, GroupsOfSigns group, bool isTheHeightTakenIntoAccount) : base(name, size, group, isTheHeightTakenIntoAccount)

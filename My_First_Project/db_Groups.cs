@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace My_First_Project
 {
-    public class db_Figure
+    public class db_Groups
     {
         public int Id { get; set; }
-        public string name_figure { get; set; }
-        public ICollection<db_Shield> Shield_ { get; set; }
+        public string? name_group { get; set; }
+        public ICollection<db_Shields> Shield_ { get; set; }
     }
 }

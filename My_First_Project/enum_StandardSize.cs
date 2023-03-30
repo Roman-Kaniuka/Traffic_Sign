@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace My_First_Project
 {
-    enum StandardSize : byte
+    public enum StandardSize : byte
     {
         I,
         II,

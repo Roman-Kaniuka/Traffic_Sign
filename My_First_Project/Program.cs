@@ -14,7 +14,9 @@
             //roadSign.Print();
             
 
-            RoadShield roadShield = new RoadShieldSquare(NamesOfSignsTriangle.s1_1, StandardSize.I, GroupsOfSigns.попереджувальнi, true);
+            //RoadShield roadShield = new RoadShieldSquare(NamesOfSignsSquare.s2_6, StandardSize.III, true);
+
+            SwitchClass switchClass = new SwitchClass(NamesOfSignsRectangle.s5_1, StandardSize.III, true);
             //roadShield.Print(); 
 
         }

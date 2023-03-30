@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace My_First_Project
 {
-    enum NamesOfSignsOctagon : byte
+   public enum NamesOfSignsOctagon : byte
     {        
         s2_2,
     }
     internal class RoadShieldOctagon : RoadShield
     {
-        public RoadShieldOctagon(object name, StandardSize size, GroupsOfSigns group, bool isTheHeightTakenIntoAccount) : base(name, size, group, isTheHeightTakenIntoAccount)
+        public RoadShieldOctagon(object name, StandardSize size, bool isTheHeightTakenIntoAccount) : base(name, size, isTheHeightTakenIntoAccount)
         {
             
         }
         protected override double GetAreaCalculation(double heightShield)
         {
-            return (Math.Pow((heightShield) / 2, 2) * 8) / 100 * (Math.Sqrt(2) - 1);
+            return (Math.Pow((heightShield) / 2, 2) * 8)  * (Math.Sqrt(2) - 1);
         }
 
         protected override FormOfShield GetFormOfShield()

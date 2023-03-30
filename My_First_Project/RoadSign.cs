@@ -135,10 +135,10 @@ namespace My_First_Project
             List<RoadShield> RoadsShields = new List<RoadShield>();
             
 
-            RoadShield roadShield = new RoadShieldOctagon(NamesOfSignsOctagon.s2_2, StandardSize.I, GroupsOfSigns.попереджувальнi, false);
+            RoadShield roadShield = new RoadShieldOctagon(NamesOfSignsOctagon.s2_2, StandardSize.I, false);
             RoadsShields.Add(roadShield);
 
-            RoadShield roadShield1 = new RoadShieldCircle(NamesOfSignsCircle.s2_5, StandardSize.I, GroupsOfSigns.попереджувальнi, true);
+            RoadShield roadShield1 = new RoadShieldCircle(NamesOfSignsCircle.s2_5, StandardSize.I, true);
             RoadsShields.Add(roadShield1);
 
             roadsShields = RoadsShields;

@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace My_First_Project
 {
-    public enum NamesOfSignsSquare : byte
+   public enum NamesOfSignsDiamond : byte
     {
-       
-        s2_6,
-       
+        s2_3,
+        s2_4,
+
     }
-    internal class RoadShieldSquare : RoadShield
+    internal class RoadShieldDiamond : RoadShield
     {
-        public RoadShieldSquare(object name, StandardSize size, bool isTheHeightTakenIntoAccount) : base(name, size,  isTheHeightTakenIntoAccount)
+        public RoadShieldDiamond(object name, StandardSize size, bool isTheHeightTakenIntoAccount) : base(name, size, isTheHeightTakenIntoAccount)
         {
-            
+
         }
         protected override double GetAreaCalculation(double heightShield)
         {
-            return Math.Pow(heightShield, 2);
+            return Math.Pow(heightShield, 2)/2;
         }
 
         protected override FormOfShield GetFormOfShield()

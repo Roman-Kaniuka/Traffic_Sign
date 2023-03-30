@@ -6,23 +6,27 @@ using System.Threading.Tasks;
 
 namespace My_First_Project
 {
-    enum NamesOfSignsRectangl : byte
+    public enum NamesOfSignsRectangle : byte
     {
        
         s1_4_1,
         s1_4_2,
-        
+        s5_1,
+        s5_2,
+        s6_1,
+        s7_1_1,
+
     }
     internal class RoadShieldRectangle : RoadShield
     {
-        public RoadShieldRectangle(object name, StandardSize size, GroupsOfSigns group, bool isTheHeightTakenIntoAccount) : base(name, size, group, isTheHeightTakenIntoAccount)
+        public RoadShieldRectangle(object name, StandardSize size, bool isTheHeightTakenIntoAccount) : base(name, size,  isTheHeightTakenIntoAccount)
         {
             
         }
         protected override double GetAreaCalculation(double heightShield)
         {
             
-            return heightShield * width / 1000;
+            return heightShield * width;
         }
 
         protected override FormOfShield GetFormOfShield()

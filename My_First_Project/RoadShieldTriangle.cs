@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace My_First_Project
 {
-    enum NamesOfSignsTriangle : byte
+   public enum NamesOfSignsTriangle : byte
     {
         s1_1,
         s1_2,
@@ -14,19 +14,19 @@ namespace My_First_Project
     }
     internal class RoadShieldTriangle : RoadShield
     {
-        public RoadShieldTriangle(object name, StandardSize size, GroupsOfSigns group, bool isTheHeightTakenIntoAccount) : base(name, size, group, isTheHeightTakenIntoAccount)
+        public RoadShieldTriangle(object name, StandardSize size, bool isTheHeightTakenIntoAccount) : base(name, size,  isTheHeightTakenIntoAccount)
         {
             
         }
         protected override double GetAreaCalculation(double heightShield)
         {
             
-            return (Math.Pow((heightShield / 1000), 2) * (Math.Sqrt(3)) / 4);
+            return (Math.Pow(heightShield, 2) * (Math.Sqrt(3)) / 4);
         }
 
         protected override FormOfShield GetFormOfShield()
         {
-            return FormOfShield.octagon;
+            return FormOfShield.triangle;
         }
     }
 }

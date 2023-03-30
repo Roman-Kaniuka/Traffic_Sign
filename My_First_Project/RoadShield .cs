@@ -18,16 +18,16 @@ namespace My_First_Project
 
         }
 
-        public RoadShield(object name, StandardSize size, GroupsOfSigns group, bool isTheHeightTakenIntoAccount)
+        public RoadShield(object name, StandardSize size, bool isTheHeightTakenIntoAccount)
         {
             this.name = name;
             this.size = size;
-            this.group = group;
+           
             this.isTheHeightTakenIntoAccount = isTheHeightTakenIntoAccount;
             GetsParameters(name, size);
         }
         protected object name;
-        protected GroupsOfSigns group;
+        protected string group;
         protected StandardSize size;
         protected FormOfShield form;
         protected double heightShield;
@@ -47,7 +47,7 @@ namespace My_First_Project
             get { return size; }
             //set { size = value; }
         }
-        public GroupsOfSigns Group
+        public object Group
         {
             get { return group; }
             //set { group = value; }
@@ -62,10 +62,32 @@ namespace My_First_Project
             get { return heightShield; }
 
         }
-        public void Print(List<db_Shield> shields)
+        public void Print(List<db_Shields> shields)
         {
             foreach (var u in shields)
-                Console.WriteLine($"{u.Id}\t{u.name_shield}\t {u.Size_.name_size}\t{u.Figure_.name_figure}  \t{u.height}\t{u.width}");
+            {
+                //Console.WriteLine($"{u.Id}\t{u.name_shield}\t {u.Size_.name_size}\t{u.Group_.name_group}\t{u.Figure_.name_figure}  \t{u.height}\t{u.width}");
+                //Console.WriteLine($"{u.Id}\t{u.name_shield}\t {u.size_id}\t{u.group_id}\t{u.figure_id}  \t{u.height}\t{u.width}");
+                Console.WriteLine($"id - {u.Id}");                
+                Console.WriteLine($"назва щитка - {name}");
+                Console.WriteLine($"знак групи - \"{group}\"");
+                Console.WriteLine($"типорозмiр щитка - {size}");                
+                Console.WriteLine($"форма житка - {form}");
+                Console.WriteLine($"висота - {heightShield}");
+                Console.WriteLine($"ширина - {width}");
+                Console.WriteLine($"вага - {weightShield}");
+                Console.WriteLine($"враховується висота щитка? - {isTheHeightTakenIntoAccount}");
+                Console.WriteLine();
+            }
+
+            /* 
+             * Console.WriteLine($"назва щитка - {u.name_shield}");
+             * Console.WriteLine($"група знаку - {u.Group_.name_group}");
+             * Console.WriteLine($"типорозмiр щитка - {u.Size_.name_size}");
+             * Console.WriteLine($"форма житка - {u.Figure_.name_figure}");
+             * Console.WriteLine($"висота - {u.height}");
+             * Console.WriteLine($"ширина - {u.width}");                
+             */
             Console.WriteLine(name);
             Console.WriteLine(group);
             Console.WriteLine(size);
@@ -83,13 +105,15 @@ namespace My_First_Project
 
             string[] a = ConvertsToString(name, size);
 
-            List<db_Shield> Shield_table = ReadsData(a[0], a[1]);
+            List<db_Shields> Shield_table = ReadsData(a[0], a[1]);
 
             var u = Shield_table[0];
             
-                heightShield = u.height;
-                width = u.width;
+                heightShield =(double)u.height/1000;
+                width = (double)u.width/1000;
                 weightShield = GetWeight(GetAreaCalculation(heightShield));
+                this.name = u.name_shield;
+                group = u.Group_.name_group;
 
             Print(Shield_table);
 
@@ -114,14 +138,15 @@ namespace My_First_Project
             return add;
         }
 
-         protected List<db_Shield> ReadsData (string name, string size) 
+         protected List<db_Shields> ReadsData (string name, string size) 
         {
             using var dbContext = new ApplicationContext();
 
             var Shield_table = dbContext
-                .Set<db_Shield>()
+                .Set<db_Shields>()
                 .Include(x => x.Size_)
                 .Include(x => x.Figure_)
+                .Include(x => x.Group_)
                 .Where(x => x.name_shield == name)
                 .Where(x => x.Size_.name_size == size)
                 .ToList();

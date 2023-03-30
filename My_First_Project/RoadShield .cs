@@ -5,21 +5,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Globalization;
+using Microsoft.EntityFrameworkCore;
+using System.Drawing;
+using System.Xml.Linq;
 
 namespace My_First_Project
 {
     abstract internal class RoadShield
     {
+        public RoadShield()
+        {
+
+        }
+
         public RoadShield(object name, StandardSize size, GroupsOfSigns group, bool isTheHeightTakenIntoAccount)
         {
             this.name = name;
             this.size = size;
             this.group = group;
             this.isTheHeightTakenIntoAccount = isTheHeightTakenIntoAccount;
-            WeightСalculation(name, size);
+            GetsParameters(name, size);
         }
         protected object name;
-        protected GroupsOfSigns group;        
+        protected GroupsOfSigns group;
         protected StandardSize size;
         protected FormOfShield form;
         protected double heightShield;
@@ -29,79 +37,127 @@ namespace My_First_Project
         const double oneWeightOfOneSquareMeter = 14.88; //kg
         protected IFormatProvider formatter = new NumberFormatInfo { NumberDecimalSeparator = "." };
 
-         public  object Name
+        public object Name
         {
             get { return name; }
-            set { name = value; }
+            //set { name = value; }
         }
         public StandardSize Size
         {
             get { return size; }
-            set { size = value; }
+            //set { size = value; }
         }
         public GroupsOfSigns Group
         {
             get { return group; }
-            set { group = value; }
+            //set { group = value; }
         }
         public bool IsTheHeightTakenIntoAccount
         {
             get { return isTheHeightTakenIntoAccount; }
-            
+
         }
         public double HeightShield
         {
             get { return heightShield; }
 
         }
-        public void Print()
+        public void Print(List<db_Shield> shields)
         {
-            Console.WriteLine(new string('_', 50));
-            Console.WriteLine($"назва щитка - {name.ToString().Replace('s', ' ').Replace('_', '.').Trim()}");
-            Console.WriteLine($"типорозмiр - {size}");
-            Console.WriteLine($"висота  - {heightShield}");
-            Console.WriteLine($"вага  - {weightShield}");
-            Console.WriteLine($"висота впливає на розмiр стiки  - {isTheHeightTakenIntoAccount}");
-            Console.WriteLine($"тип форми  - {form}");
-            Console.WriteLine(new string('_', 50));
+            foreach (var u in shields)
+                Console.WriteLine($"{u.Id}\t{u.name_shield}\t {u.Size_.name_size}\t{u.Figure_.name_figure}  \t{u.height}\t{u.width}");
+            Console.WriteLine(name);
+            Console.WriteLine(group);
+            Console.WriteLine(size);
+            Console.WriteLine(form);
+            Console.WriteLine(heightShield);
+            Console.WriteLine(width);
+            Console.WriteLine(weightShield);
+            Console.WriteLine(isTheHeightTakenIntoAccount);
+
+
+        }
+        protected void GetsParameters(object name, StandardSize size)//--------------------0*
+        {
+            form = GetFormOfShield();
+
+            string[] a = ConvertsToString(name, size);
+
+            List<db_Shield> Shield_table = ReadsData(a[0], a[1]);
+
+            var u = Shield_table[0];
+            
+                heightShield = u.height;
+                width = u.width;
+                weightShield = GetWeight(GetAreaCalculation(heightShield));
+
+            Print(Shield_table);
+
+
         }
 
-       
+
         abstract protected double GetAreaCalculation(double heightShield);
         abstract protected FormOfShield GetFormOfShield();
-        protected List<Shield> GetTheConnectionString (object name, StandardSize size)
-        {
-            
-            return GetShieldParameter(@"D:\Р\c#\myProjeck\Traffic_Sign\Test.txt", name, size);
-        }
+        
         protected double GetWeight(double shieldAreaFormula)
         {
-            return Math.Round((shieldAreaFormula * oneWeightOfOneSquareMeter), 2); 
+            return Math.Round((shieldAreaFormula * oneWeightOfOneSquareMeter), 2);
         }
-        public void WeightСalculation(object name, StandardSize size)
-        {
-            
-            var a = GetTheConnectionString( name, size);
-
-            heightShield = Convert.ToDouble(a.Min(x => x.height), formatter)/10;
-
-                form = GetFormOfShield();
-                double shieldArea = GetAreaCalculation(heightShield);
-                weightShield = GetWeight(shieldArea);
-        }
-        public static List<Shield> GetShieldParameter(string LinkToTest, object name, StandardSize size)
+        
+        public static string[] ConvertsToString(object name, StandardSize size) //-----------------3
         {
             var Name = name.ToString().Replace('s', ' ').Replace('_', '.').Trim();
             var Size = size.ToString();
 
-            var list = File.ReadAllLines(LinkToTest);
-            var a = list.Skip(1);
-            var b = a.Select(x => Shield.Parse(x));
-            var c = b.Where(Signs => Signs.name == Name);
-            var d = c.Where(Signs => Signs.size == Size);
-            var e = d.ToList();
-            return e;
+            string[]add= {Name, Size};           
+            return add;
         }
+
+         protected List<db_Shield> ReadsData (string name, string size) 
+        {
+            using var dbContext = new ApplicationContext();
+
+            var Shield_table = dbContext
+                .Set<db_Shield>()
+                .Include(x => x.Size_)
+                .Include(x => x.Figure_)
+                .Where(x => x.name_shield == name)
+                .Where(x => x.Size_.name_size == size)
+                .ToList();
+            return Shield_table;
+
+            // ВАРІАНТ 2 АЛЕ ПРАЦЮЄ ТІЛЬКИ З SIZE 
+
+            /*
+            using (ApplicationContext db = new ApplicationContext())
+            {
+
+                //using var dbContext = new ApplicationDbContext();
+
+                var joinedCoursesQueryable = db
+                    .shield
+                    .Join(
+                        // зєднуємо щиткі та типорозміри
+                        db.size,
+                        // ключ из модели курсов
+                        x => x.size_id,
+                        // ключ из модели авторов
+                        x => x.Id,
+                        // создаём новый объект результат
+                        (shield, size) => new { Shield = shield, Size = size });
+
+                var joinedCourses = joinedCoursesQueryable.ToList();
+
+                Console.WriteLine("Список об'єктів:");
+                foreach (var u in joinedCourses)
+                    Console.WriteLine($"{u.Shield.Id}\t{u.Shield.name_shield}\t {u.Size.name_size}\t{u.Shield.size_id}\t{u.Shield.figure_id}\t{u.Shield.height}\t{u.Shield.width}");
+            
+            }
+            */
+
+        }
+
 
     }
 }

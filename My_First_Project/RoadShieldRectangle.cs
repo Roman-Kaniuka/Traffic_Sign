@@ -21,8 +21,8 @@ namespace My_First_Project
         }
         protected override double GetAreaCalculation(double heightShield)
         {
-            var a = GetTheConnectionString(name, size); // temporary variable
-            return heightShield * (Convert.ToDouble(a.Min(x => x.rectangle_width), formatter)) / 1000; 
+            
+            return heightShield * width / 1000;
         }
 
         protected override FormOfShield GetFormOfShield()
